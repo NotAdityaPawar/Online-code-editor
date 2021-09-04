@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Editor from "./editors/Editor";
 
 function App() {
+  const [html,sethtml] = useState('')
+  const [js,setjs] = useState('')
+  const [css,setcss] = useState('')
+
+  const srcDoc = `
+    <html>
+      <body>${html}</body>
+      <script>${js}</script>
+      <style>${css}</style>
+    </html>
+  `
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="pane top-pane">
+        <Editor
+          language = "xml"
+          displayName = "HTML"
+          value = {html}
+          onChange = {sethtml}
+        />
+        <Editor
+          language = "css"
+          displayName = "CSS"
+          value = {css}
+          onChange = {setcss}
+        />
+        <Editor
+          language = "javascript"
+          displayName = "JAVASCRIPT"
+          value = {js}
+          onChange = {setjs}
+        />
+      </div>
+      <div className="pane botton">
+        <iframe
+          srcDoc = {srcDoc}
+          title = "Output"
+          sandbox ="allow-scripts"
+          frameBorder = "0"
+          width = "100%"
+          height = "100%"
+        />
+      </div>
     </div>
   );
 }
