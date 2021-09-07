@@ -1,0 +1,6 @@
+.body{
+  margin: 0;
+}
+.pane top-pane{
+  background-color: hs1(225,6%,25%);
+}
