@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AAAA,MACE,QACF,CACA,eACE,gCACF","file":"main.01295ca5.chunk.css","sourcesContent":[".body{\n  margin: 0;\n}\n.pane top-pane{\n  background-color: hs1(225,6%,25%);\n}"]}
